@@ -7,3 +7,8 @@ L'idée de ce TP basique est de faire en sorte de se familiariser avec les conce
 - Docker : Commandes de base / Création d'un Dockerfile / Exemple d'utilisation concrète / Docker et la sécurité
 - Docker-compose : Exemple de composition de container
 - Vagrant (peut-être) : Déploiement et Orchestration de containers sur une machine virtuelle VirtualBox
+
+Notre objectif est de mettre en place l'architecture ci-dessous et de réaliser un projet dans ce cadre :
+<img width="2556" height="1849" alt="image" src="https://github.com/user-attachments/assets/1b3d8906-5ca4-4eed-ac5e-b3867fee91de" />
+
+
