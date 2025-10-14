@@ -9,6 +9,7 @@ Il faut créer deux tunnels ssh :
 #### Tunnel 1 :
 ```bash # Ceci est un exemple de bloc de code # Tu peux copier tout ce bloc facilement echo "Hello World" ls -la ```
 
+''' bash
 ssh -N -L 5556:ensibs-cl-02.univ-ubs.fr:20001 -L 5555:localhost:8006 login@ensibs-cl-01.univ-ubs.fr -i chemin/vers/cle/prive
 
 Avec **login** qui correspond au numéro étudiant
