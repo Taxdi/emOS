@@ -1,3 +1,7 @@
+# Credentials des différentes machines
+
+Il s'agit des logins et mots de passes des différentes VM. Pour question de simplicité, tous les mots de passe seront ***ensibs***
+
 **------------------------- Login Linux 1 -------------------------**
 - Linux 1 est la VM avec GUI.
 - id : linux1-groupe1 
