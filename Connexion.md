@@ -7,6 +7,7 @@ Il y a deux possibilités pour se connecter aux machines virtuelles
 Il faut créer deux tunnels ssh : 
 
 #### Tunnel 1 :
+<pre> ```bash # Ceci est un exemple de bloc de code # Tu peux copier tout ce bloc facilement echo "Hello World" ls -la ``` </pre>
 
 ssh -N -L 5556:ensibs-cl-02.univ-ubs.fr:20001 -L 5555:localhost:8006 login@ensibs-cl-01.univ-ubs.fr -i chemin/vers/cle/prive
 
