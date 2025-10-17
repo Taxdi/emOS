@@ -19,5 +19,5 @@ Pour ce faire, nous allons nous restreindre à **3 règles d'or**:
 - Sprint = 1 semaine. Livrable minimum à la fin de chaque sprint
 - Pas de scope creep : si ça dépasse, backlog.
 - Daily quick check (5 min) : ce qui a été fait / blocages / next step.	
-
+kakou
 
