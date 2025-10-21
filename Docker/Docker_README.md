@@ -15,3 +15,6 @@ Un conteneur est le regroupement d’un logiciel et toutes ses dépendances (lib
 # Docker Compose
 
 <img width="936" height="450" alt="docker_compose" src="https://github.com/user-attachments/assets/0fc7758b-ff03-4720-99ff-9b4f1dbcd2ed" />
+
+
+Docker Compose est un outil permettant d'orchestrer plusieurs applications exécutées dans des conteneurs Docker. Cela permet notamment d'écrire l'ensemble des paramètres et dépendances des applications, ainsi que la manière dont elles interagissent entre-elles dans un fichier YAML appelé docker-compose.yml
