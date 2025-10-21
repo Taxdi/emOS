@@ -12,7 +12,7 @@ L'idée de ce TP basique est de faire en sorte de se familiariser avec les conce
 
 <img width="2556" height="1849" alt="image" src="https://github.com/user-attachments/assets/1b3d8906-5ca4-4eed-ac5e-b3867fee91de" />
 
-Lors de ce TP, nous devrons tenir un journal de bord qui nous permettra de noter les points difficiles et de savoir où en sommes-nous rendu.
+Lors de ce TP, nous devrons tenir un journal de bord qui nous permettra de noter les points difficiles et de savoir où en sommes-nous rendus.
 
 Pour ce faire, nous allons nous restreindre à **3 règles d'or**:
 
