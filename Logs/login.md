@@ -1,6 +1,6 @@
-# Credentials des différentes machines
+# Informations d'identifications des différentes machines
 
-Il s'agit des logins et mots de passes des différentes VM. Pour question de simplicité, tous les mots de passe seront ***ensibs***
+Il s'agit des logins et mots de passe des différentes VM. Pour question de simplicité, tous les mots de passe seront ***ensibs***
 
 **------------------------- Login Linux 1 -------------------------**
 - Linux 1 est la VM avec GUI.
