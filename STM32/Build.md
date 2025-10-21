@@ -1,23 +1,23 @@
-Après avoir réaliser les prérequis du fichier STM32.md, nous allons pouvoir construire les différents conteneurs nécessaires.
+Après avoir réalisé les prérequis du fichier STM32.md, nous allons pouvoir construire les différents conteneurs nécessaires.
 
 # BUILD CONTAINER PlatformIO
 
 ```
 docker build -t stm32-qemu .
 ```
-Une fois le conteneur créé, nous allons utiliser le réseau pour se connecter sur ce conteneur via le port 4444. On va également monter tout le répertoire de ressource dessus.
+Une fois le conteneur créé, nous allons utiliser le réseau pour nous connecter sur ce conteneur via le port 4444. On va également monter tout le répertoire de ressources dessus.
 
 ```
 docker run -it -v $(pwd)/..:/workspace -p 4444:4444
 ```
 
 # BUILD FirmwareSTM32 (à faire depuis le conteneur )
-Nous allons désormais monter le firmwar du stm32 depuis le conteneur installé. Pour ce fiare, nous allons nous rendre dans le dossier **/OS-FunctionPrograms** et lancer la commande suivante : 
+Nous allons désormais monter le firmware du stm32 depuis le conteneur installé. Pour ce faire, nous allons nous rendre dans le dossier **/OS-FunctionPrograms** et lancer la commande suivante : 
 
 ```
 pio run &
 ```
-Un message affichant "LED Off" s'affichera si tout ce passe bien.
+Un message affichant "LED Off" s'affichera si tout se passe bien.
 
 # Accès STM32 (depuis la machine hôte)
 
