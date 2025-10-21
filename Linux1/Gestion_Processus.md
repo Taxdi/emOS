@@ -1,7 +1,7 @@
 # Génération de zombies
 
-Dans un programme zombie_generator.c --> on créer des zombies à intervalle régulier (2s)
-Il y a une fonction qui créer les zombies, un handler qui permet de créer la commande USR1 pour tuer les zombies
+Dans un programme zombie_generator.c --> on crée des zombies à intervalle régulier (2s)
+Il y a une fonction qui crée les zombies, un handler qui permet de créer la commande USR1 pour tuer les zombies
 
 ## Pour compiler le programme :
 
