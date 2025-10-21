@@ -5,10 +5,10 @@ Pour réaliser cette partie, nous allons avoir besoin des outils suivants :
   - Socat
     - Utile pour connecter des applications à l'intérieur de boîtes séparées
   - ssh ( pour faciliter l'utilisation de la VM
-      - Permet de faire des copier coller plus facilement
-  - git ( qui va nous permettre d'utiliser les ressources de ce TP )
+      - Permet de faire des copier-coller plus facilement
+  - GIT ( qui va nous permettre d'utiliser les ressources de ce TP )
 
-Nous allons commencer par cloner le dépôt git, sur lequel les ressources pour le TP sont présente, avec la commande : 
+Nous allons commencer par cloner le dépôt git, sur lequel les ressources pour le TP sont présentes, avec la commande : 
 ```
 git clone https://forgens.univ-ubs.fr/gitlab/charton/virtos.git
 ```
