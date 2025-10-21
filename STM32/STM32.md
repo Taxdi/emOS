@@ -12,3 +12,4 @@ Nous allons commencer par cloner le dépôt git, sur lequel les ressources pour 
 ```
 git clone https://forgens.univ-ubs.fr/gitlab/charton/virtos.git
 ```
+Enfin, nous allons aller dans le dossier **/virtos/Ressource_OS_STM32/docker**
