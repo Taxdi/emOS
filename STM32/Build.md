@@ -8,7 +8,12 @@ docker build -t stm32-qemu .
 Une fois le conteneur créé, nous allons utiliser le réseau pour nous connecter sur ce conteneur via le port 4444. On va également monter tout le répertoire de ressources dessus.
 
 ```
-docker run -it -v $(pwd)/..:/workspace -p 4444:4444 stm32-qemu
+docker run --name stm32 -it -v $(pwd)/..:/workspace -p 4444:4444 stm32-qemu
+```
+Une fois le conteneur quitté, il est possible de retourner dessus en utilisant la commande : 
+
+```
+docker start -ai stm32
 ```
 
 # BUILD FirmwareSTM32 (à faire depuis le conteneur )
