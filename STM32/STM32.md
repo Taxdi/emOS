@@ -17,6 +17,38 @@ Enfin, nous allons aller dans le dossier **/virtos/Ressource_OS_STM32/docker** p
 
 ## 2. Ajout de fonctionnalités
 
-### 2.a Interruption
+### 2.1 Interruption
+Notre STM32 ne contient pas de système d’interruption logiciel équivalent à celui que l’on trouve sur un système d’exploitation classique (comme le signal `SIGINT` sous Linux).
+Nous allons donc créer notre propre mécanisme d’interruption globale, qui permettra d’interrompre n’importe quel programme en cours d’exécution à l’aide d’une combinaison clavier, comme `Ctrl + C`
 
-Notre STM32 ne contient pas de système d'interruption. Il faut donc le créer et l'intégrer à nos différentes fonctions
+---
+
+#### 2.1.1 Objectifs
+
+- Simuler un comportement similaire à `Ctrl+C` sur un terminal Linux.  
+- Pouvoir interrompre **n’importe quel programme** (kernel ou user).  
+- Centraliser cette gestion dans un **module unique** : `interrupt_handler`.  
+- Offrir un comportement cohérent et reproductible dans tout le système.
+
+---
+
+#### 2.1.2 Principe de fonctionnement
+
+Lorsqu’on tape `Ctrl + C` dans le terminal série (via `socat`), le caractère ASCII `3` est envoyé au STM32.
+
+Une fonction `checkInterrupt()` est chargée de :
+1. Lire les caractères présents sur le port série.
+2. Détecter le code `3` (correspondant à `Ctrl+C`).
+3. Déclencher un **flag global** `interrupted = true`.
+
+Tous les programmes du système peuvent ensuite vérifier ce flag pour s’arrêter proprement.
+
+---
+
+#### 2.1.3 Structure des fichiers
+
+include/
+└── interrupt_handler.h
+
+src/
+└── interrupt_handler.cpp
