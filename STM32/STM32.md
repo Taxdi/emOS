@@ -52,3 +52,27 @@ include/
 
 src/
 └── interrupt_handler.cpp
+
+#### 2.1.4 Schéma logique du fonctionnement
+
+         ┌──────────────┐
+         │  Terminal    │
+         │ (Ctrl + C)   │
+         └──────┬───────┘
+                │
+        ASCII 3 via Serial
+                │
+     ┌──────────▼──────────┐
+     │ checkInterrupt()    │
+     │ détecte ASCII = 3   │
+     │ interrupted = true  │
+     └──────────┬──────────┘
+                │
+     ┌──────────▼──────────┐
+     │ Boucles Kernel/User │
+     │ if(interrupted)     │
+     │   arrêt propre      │
+     └─────────────────────┘
+
+
+
