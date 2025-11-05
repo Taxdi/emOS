@@ -15,6 +15,8 @@ git clone https://forgens.univ-ubs.fr/gitlab/charton/virtos.git
 ```
 Enfin, nous allons aller dans le dossier **/virtos/Ressource_OS_STM32/docker** pour construire le stm32 (voir Buil.md).
 
+---
+
 ## 2. Ajout de fonctionnalités
 
 ### 2.1 Interruption
