@@ -20,7 +20,7 @@ docker start -ai stm32
 Nous allons désormais monter le firmware du stm32 depuis le conteneur installé. Pour ce faire, nous allons nous rendre dans le dossier **/OS-FunctionPrograms** et lancer la commande suivante : 
 
 ```
-pio run &
+pio run -t clean && pio run
 ```
 Un message affichant "LED Off" s'affichera si tout se passe bien.
 
