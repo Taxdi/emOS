@@ -29,6 +29,6 @@ Un message affichant "LED Off" s'affichera si tout se passe bien.
 Pour accéder au STM32 depuis la machine hôte, nous allons exécuter la commande suivante : 
 
 ```
-socat -, raw,echo=0, tcp:localhost:4444
+socat -, raw,echo=0 tcp:localhost:4444
 ```
 Nous pouvons désormais reprendre le cours du sujet.
