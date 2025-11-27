@@ -81,7 +81,7 @@ src/
 | **Catégorie** | **Description** |
 |----------------|-----------------|
 | ✅ **Simplicité d’intégration** | Le système repose uniquement sur la lecture série (`Serial`), sans dépendance matérielle ni OS. |
-| ✅ **Universalité** | Fonctionne dans le **kernel** et dans tous les **programmes utilisateurs** sans modification majeure. |
+| ✅ **Universalité** | Fonctionne dans le **kernel** et dans tous les **programmes utilisateurs** sans modification majeure.* |
 | ✅ **Comportement type SIGINT** | Simule le comportement du signal `Ctrl+C` sous Linux (arrêt propre du programme). |
 | ✅ **Compatibilité** | Fonctionne aussi bien sur **QEMU** que sur une **carte STM32 physique**. |
 | ✅ **Modularité** | Le gestionnaire est isolé dans un module (`interrupt_handler`), facile à réutiliser et à étendre. |
@@ -91,4 +91,5 @@ src/
 | ⚠️ **Pas de priorité** | Une seule interruption globale est gérée — pas de hiérarchisation ni de masquage de signaux. |
 | 💡 **Extension possible** | On peut lier `Ctrl+C` à un **ordonnanceur**, à un **bouton physique** ou à d’autres signaux (`Ctrl+Z`, etc.). |
 
+* ⚠️ IL FAUT D'ABORD DÉFINIR UN background_scheduler QUI VA FAIRE TOURNER EN TACHE DE FOND LE PROGRAMME D'INTERRUPTION !!
 
