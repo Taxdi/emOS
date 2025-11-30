@@ -87,13 +87,3 @@ Ce mini OS implémente les 3 tâches requises :
 
   - Pas de vraie préemption : le noyau ne sauvegarde pas le contexte matériel d'un programme. Pour une préemption complète il faudrait : SysTick + context switch + piles séparées.
   - Pas d'isolation mémoire entre processus.
-
-  ---
-
-  Si vous voulez, je peux maintenant :
-
-  - ajouter une option `run <timeslice_ms>` pour forcer une alternance temporelle stricte, ou
-  - améliorer la documentation d'exemples concrets (fichiers `MINI_OS_EXAMPLES.md`) ou techniques (`MINI_OS_IMPLEMENTATION_SUMMARY.md`).
-
-  Dites‑moi ce que vous préférez que je mette à jour ensuite.
-shell> kill 1          # Terminer le processus
