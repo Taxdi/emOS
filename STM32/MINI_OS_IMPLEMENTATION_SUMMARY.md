@@ -1,5 +1,3 @@
-```
-
 
 # Mini OS — Résumé d'implémentation (version révisée)
 
@@ -60,7 +58,3 @@ Améliorations futures :
 
 **Rappel** : ce système est pédagogique — il privilégie la simplicité et la compréhension des concepts d'ordonnancement et d'interruption coopérative.
 
----
-
-Indiquez si vous souhaitez que je génère un diagramme simple (ASCII) des interactions ou un schéma des états des processus (CREATE → RUNNING → SUSPENDED → ZOMBIE → CLEANUP).  
-Bon développement ! 🚀
