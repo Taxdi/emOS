@@ -74,11 +74,3 @@ Dépannage rapide
 - Aucun processus listé après `start` → Vérifier que `createProcess()` a renvoyé un PID valide.
 - `kill` sans effet → vérifier que le programme appelle `kernel_yield()` ou `delay()`.
 
----
-
-Si vous voulez, je peux ajouter des scripts de test (petit harness) qui :
-
-- lancent plusieurs `start` puis `run` et contrôlent la sortie série pour valider les comportements, ou
-- ajouter une commande `run <timeslice_ms>` pour forcer l'alternance stricte.
-
-Dites-moi quelle option vous intéresse et je la prépare.
