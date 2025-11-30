@@ -1,4 +1,3 @@
-shell> suspend 1
 # Mini OS — Exemples d'utilisation (version révisée)
 
 Ce fichier contient des scénarios pas-à-pas pour utiliser le shell et le scheduler du mini OS.
