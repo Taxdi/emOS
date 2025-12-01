@@ -49,12 +49,28 @@ Améliorations futures :
 - Allouer une pile dédiée par processus et implémenter la commutation de contexte.
 - Ajouter IPC simple (queues, signaux) et gestion d'erreurs plus robuste.
 
-**Fichiers importants**
+**Arborescence (chemin relatif : `Ressource_OS_STM32/OS-FunctionPrograms/`)**
 
-- `include/process_manager.h`, `src/process_manager.cpp`
-- `include/scheduler.h`, `src/scheduler.cpp`
-- `include/kernel_api.h` (déclare `kernel_stop_requested`, `kernel_yield`)
-- `src/main.cpp` (shell)
+```
+include/
+  ├── `process_manager.h`    (NEW)     - Gestion des processus (structure, API)
+  ├── `scheduler.h`          (NEW)     - Ordonnanceur Round-Robin (interface)
+  └── `kernel_api.h`         (NEW)     - API exposée aux programmes (`kernel_yield`, flag d'arrêt)
+
+src/
+  ├── `main.cpp`             (MODIFIÉ) - Shell interactif + intégration ProcessManager/Scheduler
+  ├── `process_manager.cpp`  (NEW)     - Implémentation de la gestion des processus
+  ├── `scheduler.cpp`        (NEW)     - Implémentation du scheduler et `kernel_yield`
+  └── user_programs/
+      ├── `infiniteLoop.cpp` (MODIFIÉ) - Exemple infini, devenu coopératif (`kernel_yield`)
+      └── (autres programmes existants — p.ex. `prog1`, `prog2`, `morpionv3`, etc.)
+
+lib/                         (EXISTANT) - Bibliothèques liées (inchangées)
+
+platformio.ini               (EXISTANT) - Configuration PlatformIO (board, scripts pre/post)
+
+scripts/                     (EXISTANT) - `pre-build-programs.py`, `post-qemu.py`
+```
 
 **Rappel** : ce système est pédagogique — il privilégie la simplicité et la compréhension des concepts d'ordonnancement et d'interruption coopérative.
 
