@@ -2,12 +2,6 @@
 
 Ce fichier contient des scénarios pas-à-pas pour utiliser le shell et le scheduler du mini OS.
 
-Pré-requis
------------
-
-- Compiler le projet dans `OS-FunctionPrograms` avec `pio run`.
-- Se connecter au port série (115200) pour utiliser le shell.
-
 Exemple 1 — Lancer plusieurs processus et utiliser le scheduler
 -------------------------------------------------------------
 
