@@ -7,11 +7,11 @@ Schéma de flux
 
     VM1 - C1 (Sourcing) : Pioche un mot → Envoi TCP.
 
-    VM1 - C2 (Crypting) : César (+5) + XOR ("Nirvana") → Envoi TCP (via Bridge Vmbr1).
+    VM1 - C2 (Crypting) : César (+5) → Envoi TCP (via Bridge Vmbr1).
 
-    VM3 - C1 (Decrypting) : XOR ("Nirvana") + César (−5) → Envoi TCP.
+    VM2 - C3 (Crypting) : XOR ("Nirvana") → Envoi TCP.
 
-    VM3 - C2 (Validator) : Vérification dictionnaire → Feedback vers VM1-C1.
+    VM2 - C4 (Decrypting) : XOR ("Nirvana") + César (−5) → Envoi TCP.
 
 ## 2. Détails Techniques des Containers
 
@@ -21,9 +21,11 @@ Schéma de flux
 | **2. Chiffrement Cesar** | **VM1** | `c2_caesar` | Chiffrement | César (+5) | `c3_xor` (VM2) |
 | **3. Envoie** | **Bridge** | `vmbr1` | Routage réseau | TCP (Paquets binaires) | VM2 |
 | **4. Chiffrement XOR**| **VM2** | `c3_xor` | Chiffrement | XOR ("nirvana") | `c4_decipher` (VM2) |
-| **5. Vérification**| **VM2** | `c4_decipher` | Déchiffrement | XOR("nirvana") -> César(-5) | `c1_initiator` (VM1) |
+| **5. Déchiffrement + envoie**| **VM2** | `c4_decipher` | Déchiffrement + envoie | XOR("nirvana") -> César(-5) | `c1_initiator` (VM1) |
 
 -----------------------------------------------------------------
+
+** A modifier ** 
 
 | Service | Port Écouté | Protocole | Type de Donnée |
 | :--- | :--- | :--- | :--- |
@@ -46,18 +48,3 @@ Soit le mot "HELLO" :
 
     Transmission : Envoi des octets bruts à travers le bridge Vmbr1.
 
------------------------------------------------------------------
-
-## 4. Configuration Réseau Proxmox
-
-Pour que la communication fonctionne entre les deux VMs, l'infrastructure doit être configurée ainsi :
-
-    Interface réseau : Chaque VM doit posséder une interface réseau liée au bridge vmbr1.
-
-    Adressage IP :
-
-        VM1 : 192.168.1.10
-
-        VM3 : 192.168.1.20
-
-    Docker-Compose : Les ports des containers doivent être mappés sur les hôtes (ex: 8080:8080) pour permettre le passage entre les VMs.
