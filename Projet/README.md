@@ -24,27 +24,19 @@ Schéma de flux
 | **5. Déchiffrement + envoie**| **VM2** | `c4_decipher` | Déchiffrement + envoie | XOR("nirvana") -> César(-5) | `c1_initiator` (VM1) |
 
 -----------------------------------------------------------------
-
-** A modifier ** 
+Il y a en tout 4 relais : 
 
 | Service | Port Écouté | Protocole | Type de Donnée |
 | :--- | :--- | :--- | :--- |
-| **Relais Chiffré** | `5000` | TCP | Binaire (Bytes) |
-| **Relais Déchiffré** | `6000` | TCP | Chaîne (String) |
-| **Retour Validation** | `7000` | TCP | Statut (ACK/NACK) |
+| **Relais clair** | `5000` | TCP | Binaire (Bytes) |
+| **Relais chiffré Cesar** | `5001` | TCP | Chaîne (String) |
+| **Relais chiffré XOR** | `5002` | TCP | Chaîne (String) |
+| **Retour déchiffré en clair** | `5003` | TCP | Binaire (Bytes) |
 
 -----------------------------------------------------------------
 
 ## 3. Logique de Communication (Protocole TCP)
 
 Bien que l'UDP soit possible, le TCP est recommandé ici car le chiffrement XOR sur des flux binaires supporte mal la perte de paquets ou le désordre.
-Étapes de transformation (Exemple)
 
-Soit le mot "HELLO" :
-
-    César +5 : HELLO → MJQQT
-
-    XOR "Nirvana" : MJQQT ⊕ NIRVA... → [Données Binaires]
-
-    Transmission : Envoi des octets bruts à travers le bridge Vmbr1.
 
